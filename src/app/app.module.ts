@@ -18,6 +18,7 @@ import { ListcategoriesComponent } from './listcategories/listcategories.compone
     FirstLettreUpperPipe,
     TestDirective,
     ListcategoriesComponent
+    //ajouter ici
   ],
   imports: [
     BrowserModule,

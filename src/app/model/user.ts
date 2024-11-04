@@ -1,5 +1,5 @@
 export class User {
-    name !:String;
-    price !:number;
-    quantity !:number
+    name !: String;
+    price !: number;
+    quantity !: number
 }
