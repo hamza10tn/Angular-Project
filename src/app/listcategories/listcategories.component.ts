@@ -9,7 +9,7 @@ import { Categorie } from '../model/categorie';
 export class ListcategoriesComponent {
   categories: Categorie[] = [{
     "id": 1, "title": "Grand électroménager",
-    "image": "assets/images/categorie_electromenager.jpg", "description": "ttt",
+    "image": "assets/images/categorie_electromenager.jpg", "description": "ttbnc qs,ndqsndqst",
     "available": true
   },
   {
@@ -46,9 +46,17 @@ export class ListcategoriesComponent {
 
   show = false;
   j = -1;
-
-
-  changestate(indexOfElement: any) {
-
+  k = -1;
+  des = "";
+  State = false;
+  search = "";
+  changeState(indexOfElement: any) {
+    /*if(this.State)
+this.State=false;
+    else
+    this.State=true;*/
+    this.State = !this.State
+    this.des = this.categories[indexOfElement].description;
+    this.k = indexOfElement;
   }
 }

@@ -1,15 +1,18 @@
+<input type="text" [(ngModel)]="search">
 <div class="container" *ngFor="let c of  categories; let i=index">
-  <div class="row">
+
+  <div class="row" *ngIf="search==c.title || search==''">
     <div class="col-md-4" style="margin-bottom: 20px;">
       <img (click)="m(i)" src="{{c.image}}" alt="{{c.title}}" class="img-fluid h-50 w-75">
       <h3>{{c.title |uppercase}}</h3>
       <button class="btn btn-primary" [hidden]="!c.available">Voir produits</button>
-      <button class="btn btn-primary" (click)="changestate(i)">show description</button>
-
+      <button class="btn btn-primary" (click)="changeState(i)">show description product</button>
+      <div *ngIf="State && i==k"> la description: {{des}} index: {{i}}</div>
     </div>
 
 
   </div>
-  <div *ngIf=" j!=i"> {{c.description}}</div>
+
 
 </div>
+<router-outlet></router-outlet>
