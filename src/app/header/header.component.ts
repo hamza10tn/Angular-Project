@@ -7,26 +7,32 @@ import { User } from '../model/user';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  Q=1;
-  kolor='pink'
-condition=true;
-  users:User[]=[
-    {name:'John',quantity:25, price:200},
-    {name:'P2',quantity:0, price:200},
-    {name:'P3',quantity:25, price:200},
+
+  isAdmin: boolean = true;
+  constructor() {
+    console.log('isAdmin:', this.isAdmin);  // Vérifie si la valeur change correctement
+  }
+
+  Q = 1;
+  kolor = 'pink'
+  condition = true;
+  users: User[] = [
+    { name: 'John', quantity: 25, price: 200 },
+    { name: 'P2', quantity: 0, price: 200 },
+    { name: 'P3', quantity: 25, price: 200 },
 
   ]
-sayHello(){
-  console.log('hello')
-}
+  sayHello() {
+    console.log('hello')
+  }
 
-getColor(){
-  if(this.Q>10)
-    return 'green'
-  else return 'yellow'
-}
+  getColor() {
+    if (this.Q > 10)
+      return 'green'
+    else return 'yellow'
+  }
 
-changeColor(){
-  this.kolor='blue'
-}
+  changeColor() {
+    this.kolor = 'blue'
+  }
 }

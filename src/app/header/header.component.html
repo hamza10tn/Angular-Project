@@ -1,33 +1,31 @@
-<p>header works!</p>
-<input type="submit" value="execute methode" (click)="sayHello()">
-
-<div [style.backgroundColor]="kolor" >
-
-    un msg simple
-</div>
-<input type="text" [(ngModel)]="kolor">
-{{kolor|uppercase}}
-<div *ngFor="let u of users">
-
-    {{u.name}}
-    {{u.quantity}}
-    {{u.price}}
-    <span *ngIf="u.quantity==0">
-    <button [disabled]="true">buy</button>
-</span>
-<span *ngIf="u.quantity!=0">
-    <button [disabled]="false">buy</button>
-</span>
-</div>
-<hr>
-<div *ngFor="let u of users">
-
-    {{u.name}}
-    {{u.quantity}}
-    {{u.price}}
-   
-    <button [disabled]="u.quantity==0">buy</button>
-
-</div>
-
-<div [ngStyle]="{'backgroundColor':condition?'green':'yellow'}">ngstye</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">TWINStore</a>
+        <nav
+            [ngClass]="isAdmin ? 'navbar navbar-expand-lg navbar-dark bg-dark' : 'navbar navbar-expand-lg navbar-light bg-light' ">
+        </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

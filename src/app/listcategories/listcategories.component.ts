@@ -35,7 +35,11 @@ export class ListcategoriesComponent {
     "id": 6, "title": "Produits voiture", "image": "assets/images/produits_nettoyages.jpg",
     "description": "", "available": false
   },
+
+
   ]
+
+  titre: string = "";
   m(c: any) {
     this.j = c;
     this.show = true
@@ -58,5 +62,8 @@ this.State=false;
     this.State = !this.State
     this.des = this.categories[indexOfElement].description;
     this.k = indexOfElement;
+  }
+  getDescription(description: string) {
+    alert(description);
   }
 }
