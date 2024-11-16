@@ -22,6 +22,8 @@ export class ProductsCategoryComponent {
     { "id": 6, "name": "TV 50'' LG", "image": "assets/images/tv_lg.jpg", "categoryId": 5, "description": "", "price": 1800, "brand": "LG", "promotion": 0 },
   ]
 
+  qparam!: string;
+
   constructor(private ac: ActivatedRoute) {
 
   }
@@ -34,7 +36,12 @@ export class ProductsCategoryComponent {
           this.list.push(p);
         }
       }
-    })
+    }),
+
+      //query param
+      this.ac.queryParams.subscribe((params) => {
+        this.qparam = params['id'];
+      });
   }
 
 }

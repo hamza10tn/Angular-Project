@@ -29,7 +29,6 @@
     <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories | contains:title.value">
 
 
-
       <img (click)="getDescription(categorie.description)" [src]="categorie.image" [alt]="categorie.title"
         class="img-fluid h-50 w-75">
       <h3>{{categorie.title | uppercase}}</h3>

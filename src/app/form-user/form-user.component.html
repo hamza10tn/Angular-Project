@@ -1,0 +1,22 @@
+<form #f="ngForm">
+    <label for="name">Name</label>
+    <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" class="form-control" required minlength="3"
+        pattern="[a-zA-Z]*">
+    <div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert alert-danger">
+        <div *ngIf="name.errors!['required']">Name is required</div>
+        <div *ngIf="name.errors!['minlength']">Name must be at least 3 characters long.</div>
+        <div *ngIf="name.errors!['pattern']">Name must contain only letters.</div>
+    </div>
+    <label for="Price">Price</label>
+    <input type="number" name="price" [(ngModel)]="user.price" #price="ngModel" class="form-control">
+    <label for="quantity">quantity</label>
+    <input type="number" name="quantity" [(ngModel)]="user.quantity" #quantity="ngModel" class="form-control">
+    <label for="email">email</label>
+    <input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" class="form-control"
+        pattern="^[a-zA-Z_-]+@gmail.com">
+    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+        <div *ngIf="email.errors!['pattern']">l'email n'existe pas</div>
+    </div>
+
+    <button type="button" (click)="createUser(f)" [disabled]="f.invalid" class="btn btn-primary">valider</button>
+</form>

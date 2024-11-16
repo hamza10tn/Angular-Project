@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../model/user';
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +17,10 @@ export class HeaderComponent {
   kolor = 'pink'
   condition = true;
   users: User[] = [
-    { name: 'John', quantity: 25, price: 200 },
-    { name: 'P2', quantity: 0, price: 200 },
-    { name: 'P3', quantity: 25, price: 200 },
+    { name: 'John', quantity: 25, price: 200, email: 'aaa@gmail.com' },
+    { name: 'P2', quantity: 0, price: 200, email: 'aaa@gmail.com' },
+    { name: 'P3', quantity: 25, price: 200, email: 'aaa@gmail.com' },
+
 
   ]
   sayHello() {
